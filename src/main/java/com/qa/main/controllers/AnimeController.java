@@ -57,7 +57,7 @@ public class AnimeController {
 	// GET REQUEST - Specific get Request for English Title
 	@GetMapping("/getByEnglishTitle/{englishTitle}")
 	public ResponseEntity<Anime> getByEnglishTitle(@PathVariable String englishTitle) {
-		return new ResponseEntity<Anime>(service.getByJapaneseTitle(englishTitle), HttpStatus.CREATED);
+		return new ResponseEntity<Anime>(service.getByEnglishTitle(englishTitle), HttpStatus.CREATED);
 	}
 
 	// GET REQUEST - Specific get Request for Episodes < [episodes]

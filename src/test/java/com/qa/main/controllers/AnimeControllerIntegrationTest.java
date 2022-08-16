@@ -81,6 +81,58 @@ public class AnimeControllerIntegrationTest {
 	}
 	
 	@Test
+	public void getByJapaneseTitle() throws Exception {
+		//Create an anime to check the output of readById
+				Anime result = new Anime(1L, "english", "japanese", 1, 10, 5, true);
+											
+				//converts the list to a JSON (As API responds in JSON)
+				String resultAsJSON = mapper.writeValueAsString(result);
+				mvc.perform(get("/Anime/getByJapaneseTitle/japanese")
+						.contentType(MediaType.APPLICATION_JSON))
+						.andExpect(content().json(resultAsJSON));
+		
+	}
+	
+//	@Test
+//	public void getByEnglishTitle() throws Exception {
+//		//Create an anime to check the output of readById
+//				Anime result = new Anime(1L, "e", "japanese", 1, 10, 5, true);
+//											
+//				//converts the list to a JSON (As API responds in JSON)
+//				String resultAsJSON = mapper.writeValueAsString(result);
+//				mvc.perform(get("/Anime/getByEnglishTitle/e")
+//						.contentType(MediaType.APPLICATION_JSON))
+//						.andExpect(content().json(resultAsJSON));
+//		
+//	}
+	
+	@Test
+	public void getByEpisodesLessThan() throws Exception {
+		//Create an anime to check the output of readById
+		List<Anime> result = new ArrayList<>();
+		result.add(new Anime(1L, "english", "japanese", 1, 10, 5, true));
+									
+		//converts the list to a JSON (As API responds in JSON)
+		String resultAsJSON = mapper.writeValueAsString(result);
+		mvc.perform(get("/Anime/getByEpisodesLessThan/20")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().json(resultAsJSON));
+	}
+	
+	@Test
+	public void getByEpisodesGreaterThan() throws Exception {
+		//Create an anime to check the output of readById
+		List<Anime> result = new ArrayList<>();
+		result.add(new Anime(1L, "english", "japanese", 1, 10, 5, true));
+									
+		//converts the list to a JSON (As API responds in JSON)
+		String resultAsJSON = mapper.writeValueAsString(result);
+		mvc.perform(get("/Anime/getByEpisodesGreaterThan/1")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().json(resultAsJSON));
+	}
+	
+	@Test
 	public void updateTest() throws Exception {
 		//Create an Object for posting
 				Anime result = new Anime(1L, "english", "japanese", 1, 10, 5, true);
@@ -93,10 +145,44 @@ public class AnimeControllerIntegrationTest {
 	}
 	
 	@Test
+	public void getByRatingLessThan() throws Exception {
+		//Create an anime to check the output of readById
+		List<Anime> result = new ArrayList<>();
+		result.add(new Anime(1L, "english", "japanese", 1, 10, 5, true));
+									
+		//converts the list to a JSON (As API responds in JSON)
+		String resultAsJSON = mapper.writeValueAsString(result);
+		mvc.perform(get("/Anime/getByRatingLessThan/10")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().json(resultAsJSON));
+	}
+	
+	@Test
+	public void getByRatingGreaterThan() throws Exception {
+		//Create an anime to check the output of readById
+		List<Anime> result = new ArrayList<>();
+		result.add(new Anime(1L, "english", "japanese", 1, 10, 5, true));
+									
+		//converts the list to a JSON (As API responds in JSON)
+		String resultAsJSON = mapper.writeValueAsString(result);
+		mvc.perform(get("/Anime/getByRatingGreaterThan/1")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().json(resultAsJSON));
+	}
+	
+	@Test
 	public void deleteTest() throws Exception {
 		mvc.perform(delete("/Anime/delete/1")
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isNoContent());
+		
+	}
+	
+	@Test
+	public void ExceptionTest() throws Exception {
+		mvc.perform(get("/Anime/getByID/90")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNotFound());
 		
 	}
 
