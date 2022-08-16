@@ -99,10 +99,6 @@ let printResults = (result) => {
 
 let deleteById = (id) => {
 
-    if (!validateDelete()){
-        return;
-    }
-
     axios.delete(`http://localhost:8080/Anime/delete/${id}`)
     .then(() => {
         getAll();
