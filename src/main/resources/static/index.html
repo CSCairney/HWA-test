@@ -13,10 +13,10 @@
     
     
     
-    <nav class="navbar navbar-expand-lg" style="background-color:grey">
+    <nav class="navbar navbar-expand-lg" style="background-color:grey; position:fixed; top: 0; width:100%" >
         <div class="container-fluid">
-            <img src="./imgs/AnimeBannerImageOne.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="navbar-brand" style="color:white" href="./main.html">Personal Anime List</a>
+            <img src="./imgs/justLogo.png" alt="" width="40" height="40" class="d-inline-block align-text-top" style="margin-right:10px">
+          <a class="navbar-brand" style="color:white" href="./index.html">Navigation</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -32,6 +32,18 @@
         </div>
       </nav>
 
+      <header class="masthead text-white text-center" style="background-image: url(imgs/mastheadwhite.jpg); background-repeat:no-repeat; background-size:cover; border-bottom: 10px solid grey;">
+        <div class="container d-flex align-items-center flex-column" Style="background-color:rgba(128, 128, 128, 0.822); width: fit-content; height:fit-content; border-radius: 25px; padding:10px">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="./imgs/logoTransparent.png" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading mb-0" style="color:black; font-size:20px">Welcome to your watchlist!</h1>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0" style="color:black; font-size:15px">Add New Shows - Update Existing - Delete Old</p>
+        </div>
+    </header>
+
+   
      
     
         <div id="form-div">
@@ -101,8 +113,46 @@
         </form>
     </div>
     <div id="deleteResult-Div"></div> -->
-    <footer>
-        
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">QA Location</h4>
+                    <p class="lead mb-0">
+                        3rd Floor, Internation House, 1st Katharine's Way
+                        <br>
+                        London, E1W 1UN
+                    </p>
+                </div>
+                <!-- Footer Future Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">Future Work</h4>
+                    <p class="lead mb-0">
+                        <ul>
+                            <li>Japanese Translator</li>
+                            <li>Cloud Hosted</li>
+                            <li>Community Tab</li>
+                            
+                          </ul>
+                    </p>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Developer</h4>
+                    <p class="lead mb-0">
+                        Created by Charles Cairney
+                        <a href="https://www.linkedin.com/in/charlescairney/">LinkedIn</a>
+                        .
+                    </p>
+                </div>
+                
+                <!-- Footer Logo Icons-->
+                <div>
+                    <img src="./imgs/logoTransparent.png" alt="" width="80" height="26" class="d-inline-block align-text-top" style="margin:auto;">
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="./JS/script.js"></script>
