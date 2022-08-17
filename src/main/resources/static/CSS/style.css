@@ -24,6 +24,7 @@
     
 }
 
+
 .entry-Div {
     background-color: whitesmoke;
     padding: 1%;
@@ -50,4 +51,31 @@
     width:25%;
     margin-left:2%
 
+}
+
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+
+}
+
+.masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+}
+
+.masthead-subheading {
+    font-size: 1.25rem;
+}
+
+.masthead-avatar {
+    width: 15rem;
+}
+
+.footer {
+    margin-top: 25px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: grey;
+    color: white;
 }

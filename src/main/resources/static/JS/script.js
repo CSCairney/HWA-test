@@ -47,7 +47,6 @@ let create = () => {
         
     }
     axios.post("http://localhost:8080/Anime/create", obj)
-    
     .then(res => {
         getAll();
 
